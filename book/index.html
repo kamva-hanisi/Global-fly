@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- link css  -->
+    <link href="/book/app.css" rel="stylesheet">
+
+    <!-- link icon  -->
+    <link rel="icon" href="images/icon logo.jpg"/>
+
+    <title>Global fly Landing Page</title>
+
+</head>
+<body class="flex-column-center">
+
+<div class="application box-shadow-default">
+    <div class="application-content-title">BOADERING PASS</div>
+    <div class="message border-radius-5px box-shadow-default">
+        <div class="content"></div>
+        <!--<div class="close"><i class="far fa-times-circle"></i></div>-->
+    </div>
+    <div id="add-book-shortcut" class="add-icon-wrapper">
+        <span class="add-icon box-shadow-default">+</span>
+    </div>
+    <form action="?#" enctype="application/x-www-form-urlencoded" method="get"
+          class="box-shadow-default border-radius-5px">
+        <div class="inline-input-elements">
+            <label>
+                PASSENGER NAME
+                <input type="text" id="name" placeholder="full name">
+            </label>
+            <label>
+                FROM:
+                <input type="text" id="writer" placeholder="e.g KZN">
+            </label>
+            <label>
+                TO:
+                <input type="text" id="isbn" placeholder="e.g London">
+            </label>
+        </div>
+        <div class="inline-button-elements">
+            <input class="border-radius-5px box-shadow-dark background-image" type="submit" value="Add book" data-job="add" id="submit"/>
+            <input class="border-radius-5px box-shadow-dark background-image" type="reset" value="Reset" data-job="reset" id="reset"/>
+        </div>
+    </form>
+
+    <table id="view-table" class="box-shadow-default border-radius-5px">
+        <thead class="background-image">
+        <tr>
+            <td>#N.O</td>
+            <td>Name</td>
+            <td>FROM:</td>
+            <td>TO:</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+        <tbody id="view-table-body">
+        </tbody>
+    </table>
+</div>
+
+
+<script src="/book/assets/js/app.js"></script>
+<script src="/book/assets/js/scripts.js"></script>
+</body>
+</html>
+

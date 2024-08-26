@@ -1,0 +1,314 @@
+/*http://localhost:63342/js-crud/assets/css/app.css?_ijt=31rtlugvfv0ngaro4f31dren1o*/
+/*http://localhost:63342/js-crud/index.html?_ijt=uhfqlir65m14a62buf4dtv7o4o*/
+/*http://localhost:63342/js-crud/assets/css/app.css?_ijt=4igge18osjb0l7dtm0aorcfun3*/
+html:root {
+    --blue-deep: #0777cc;
+    --blue-deep-light: #34abe6;
+    --red: red;
+    --green: #4caf50;
+    --black: #000;
+    --white: #fff;
+    --blue-400: #7a7aff;
+    --green-200: rgba(148, 242, 200, 0.5);
+    --green-300: #94f2c8;
+    --red-200: #f9a09a94;
+    --red-300: #fa85a2;
+    --gray-200: #eeeef5;
+    --gray-300: #e8e5ef;
+
+    --dark-shadow-default: 0 2px 4px rgba(0, 0, 0, .12), 0 2px 3px rgba(0, 0, 0, .24);
+    --dark-shadow-button: 0 2px 4px rgba(76, 175, 80, .12), 0 2px 3px rgba(76, 175, 80, .24);
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", SourceSansPro, SolaimanLipi;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* {
+    -webkit-transition: 300ms ease 0ms;
+    -moz-transition: 300ms ease 0ms;
+    -o-transition: 300ms ease 0ms;
+    transition: 300ms ease 0ms;
+}
+
+html {
+    background-color: var(--gray-200);
+    box-sizing: border-box;
+    font-size: 14px;
+    overflow-x: hidden;
+    overflow-y: scroll
+}
+
+.clean {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: auto;
+
+    color: var(--black);
+    font-family: var(--font-family-sans-serif);
+
+    background: transparent;
+}
+
+.flex-column-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.application {
+    width: 850px;
+
+    margin-top: 1rem;
+    padding: 2.5rem 3rem !important;
+
+    line-height: 1.5;
+
+    background-color: var(--white);
+    border-radius: .7rem;
+}
+
+.box-shadow-default {
+    -webkit-box-shadow: var(--dark-shadow-default);
+    -moz-box-shadow: var(--dark-shadow-default);
+    box-shadow: var(--dark-shadow-default);
+}
+
+.box-shadow-dark {
+    -webkit-box-shadow: var(--dark-shadow-button);
+    -moz-box-shadow: var(--dark-shadow-button);
+    box-shadow: var(--dark-shadow-button);
+}
+
+.background-image {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .05) 0%, rgba(0, 0, 0, .1) 100%);
+}
+
+.border-radius-5px {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.application-content-title {
+    color: var(--blue-400);
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    /*margin-bottom: 20px;*/
+    text-transform: capitalize
+}
+
+.message {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .05);
+    border-left: 4px solid var(--red-300);
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-size: 15px;
+    line-height: 24px;
+
+    display: none;
+    /*display: flex;*/
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+}
+
+.message .content {
+    padding: 1rem 0 1rem 1rem;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message .close {
+    height: 25px;
+    width: 25px;
+    font-size: 25px;
+    color: var(--red);
+    border: 1px solid;
+    padding: 8px 8px 8px 8px;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message .close:hover {
+    cursor: pointer;
+}
+
+.error {
+    background-color: var(--red-300);
+    border-left: 4px solid var(--red);
+    color: var(--white);
+}
+
+.success {
+    background-color: var(--green-200);
+    border-left: 4px solid var(--green);
+    color: var(--green);
+}
+
+form {
+    display: none;
+    flex-direction: column;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+form div {
+    display: flex;
+    flex-direction: row;
+}
+
+.inline-button-elements input:last-child{
+    margin-left: 10px;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    margin-right: 40px;
+
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+form label:last-child {
+    margin-left: 0;
+}
+
+form input[type=text] {
+    font-family: inherit;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+form input[type=submit], form input[type=reset], button[id=edit], button[id=delete] {
+    padding: 5px 15px;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+
+}
+
+form input[type=submit], form input[type=reset] {
+    width: 140px;
+
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--white);
+}
+
+form input[type=submit]{
+    background-color: var(--blue-deep-light);
+}
+
+form input[type=submit]:hover {
+    background-color: var(--blue-deep);
+}
+
+form input[type=reset]{
+    background-color: var(--red-200);
+}
+
+form input[type=reset]:hover {
+    background-color: var(--red);
+}
+
+
+button[id=edit], button[id=delete] {
+    margin: 10px;
+    font-size: 16px;
+}
+
+button[id=edit] {
+    color: var(--black);
+    background-color: #E7E7E780;
+}
+
+
+button[id=edit]:hover {
+    background-color: #e7e7e7;
+}
+
+
+button[id=delete] {
+    color: var(--white);
+    background-color: var(--red-300);
+}
+
+button[id=delete]:hover {
+    background-color: var(--red);
+}
+
+table {
+    border-collapse: collapse;
+    display: table;
+    height: auto;
+    text-align: left;
+    width: 100%;
+    line-height: 28px;
+}
+
+table thead {
+    font-weight: bold;
+    background-color: var(--gray-300);
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+table tr td {
+    border-bottom: .1rem solid var(--gray-300);
+    padding: .5rem 1rem
+}
+
+table tr td:last-child {
+    text-align: center;
+    width: 175px;
+}
+
+.add-icon-wrapper {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.add-icon {
+    font-size: 24px;
+    padding: 0 3px 5px;
+    background: var(--blue-deep);
+    border-radius: 50%;
+    width: 35px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.add-icon:active {
+    transform: rotate(45deg);
+}
