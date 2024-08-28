@@ -21,18 +21,16 @@
         <h1>Sign Up</h1>
         <h4>It's free and only takes a minute</h4>
 
-        <form>
+        <form id="signup-form">
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <input required type="text" id="fname" name="firstname" placeholder="Your name..">
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <input required type="text" id="lname" name="lastname" placeholder="Your last name..">
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Your email..">
+            <input required type="text" id="email" name="email" placeholder="Your email..">
             <label for="password">Password</label>
-            <input type="text" id="password" name="password" placeholder="Your password..">
-            <label for="password">Confirm Password</label>
-            <input type="password" id="password" name="password" placeholder="Your password..">
-            <input type="button" value="Submit">
+            <input required type="text" id="password" name="password" placeholder="Your password..">
+            <button type="submit">Submit</button>
         </form>
         <p>By clicking the Sign Up button, you agree to our <a href="#">Terms & Privacy</a> and <a href="#">Cookies Policy</a>
         </p>
@@ -40,7 +38,7 @@
     <p class="para-2">Already have an account? <a href="/login/login.html">Login</a> here</p>
 
     <!-- link app.js  -->
-    <script src="./app.js"></script>
+    <script src="../auth.js"></script>
     
 </body>
 </html>

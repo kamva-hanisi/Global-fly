@@ -18,20 +18,20 @@
 <body>
     <div class="login-box">
         <h1>Log in</h1>
-        <form>
+        <form id="login-form">
             <label>Email</label>
-            <input type="email" placeholder="Enter Email">
+            <input required type="email" id="email" placeholder="Enter Email">
             <label>Password</label>
-            <input type="password" placeholder="Enter Password">
+            <input required type="password" id="password" placeholder="Enter Password">
             <a href="#">forgot password?</a>
-            <input type="button" value="Log in">
+            <button type="submit">log in</button>
         </form>
     </div>
     <p class="para-2"
         >Not have an account? <a href="/sign/index.html">Sign Up</a> here</p>
 
     <!-- link app.js  -->
-    <script src="./app.js"></script>
+    <script src="/auth.js"></script>
 
 </body>
 </html>

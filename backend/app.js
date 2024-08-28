@@ -18,7 +18,7 @@ app.post("/signup", (req, res) => {
   const { first_name, last_name, email, password } = req.body;
 
   if (!first_name || !last_name || !email || !password) {
-    return res.status(400).json({ message: "all fields are required" });
+    return res.status(400).json({ error: "all fields are required" });
   }
 
   const query =
@@ -40,22 +40,22 @@ app.post("/login", (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(400).json({ message: "email and password are required" });
+    return res.status(400).json({ error: "email and password are required" });
   }
 
   const query = "SELECT * FROM users WHERE email = ?";
   db.query(query, [email], (err, results) => {
     if (err) {
-      return res.status(500).json({ message: "Error fetching user" });
+      return res.status(500).json({ error: "Error fetching user" });
     }
 
     if (results.length === 0 || results[0].password !== password) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ error: "Invalid email or password" });
     }
 
     const user = results[0];
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "5h",
     });
     res.status(200).json({ token, user });
   });
@@ -71,7 +71,7 @@ function authenticateToken(req, res, next) {
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
       console.error(err);
-      return res.status(403).json({ message: err.message });
+      return res.status(403).json({ error: err.message });
     }
     req.user = user;
     next();
@@ -83,7 +83,7 @@ app.post("/booking", authenticateToken, (req, res) => {
   const user_id = req.user.id;
 
   if (!passenger_name || !from_location || !to_location) {
-    return res.status(400).json({ message: "All fields are required" });
+    return res.status(400).json({ error: "All fields are required" });
   }
 
   const query =
@@ -93,7 +93,7 @@ app.post("/booking", authenticateToken, (req, res) => {
     [user_id, passenger_name, from_location, to_location],
     (err) => {
       if (err) {
-        return res.status(500).json({ message: "Error creating booking" });
+        return res.status(500).json({ error: "Error creating booking" });
       }
       res.status(201).json({ message: "Booking created successfully" });
     }
@@ -111,20 +111,20 @@ app.delete("/booking/:id", authenticateToken, (req, res) => {
   const query = "SELECT * FROM bookings WHERE id = ? AND user_id = ?";
   db.query(query, [bookingId, userId], (err, results) => {
     if (err) {
-      return res.status(500).json({ message: "Error fetching booking" });
+      return res.status(500).json({ error: "Error fetching booking" });
     }
 
     if (results.length === 0) {
       return res
         .status(403)
-        .json({ message: "You are not authorized to delete this booking" });
+        .json({ error: "You are not authorized to delete this booking" });
     }
 
     // Proceed to delete the booking
     const deleteQuery = "DELETE FROM bookings WHERE id = ?";
     db.query(deleteQuery, [bookingId], (err) => {
       if (err) {
-        return res.status(500).json({ message: "Error deleting booking" });
+        return res.status(500).json({ error: "Error deleting booking" });
       }
       res.status(200).json({ message: "Booking deleted successfully" });
     });
@@ -137,7 +137,7 @@ app.get('/bookings', (req, res) => {
 
   db.query(query, (err, results) => {
     if (err) {
-      return res.status(500).json({ message: 'Error fetching bookings' });
+      return res.status(500).json({ error: 'Error fetching bookings' });
     }
     res.status(200).json(results);
   });

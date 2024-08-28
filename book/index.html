@@ -17,7 +17,7 @@
 <body class="flex-column-center">
 
 <div class="application box-shadow-default">
-    <div class="application-content-title">BOADERING PASS</div>
+    <div class="application-content-title">Global Fly</div>
     <div class="message border-radius-5px box-shadow-default">
         <div class="content"></div>
         <!--<div class="close"><i class="far fa-times-circle"></i></div>-->
@@ -25,20 +25,19 @@
     <div id="add-book-shortcut" class="add-icon-wrapper">
         <span class="add-icon box-shadow-default">+</span>
     </div>
-    <form action="?#" enctype="application/x-www-form-urlencoded" method="get"
-          class="box-shadow-default border-radius-5px">
+    <form class="box-shadow-default border-radius-5px">
         <div class="inline-input-elements">
             <label>
                 PASSENGER NAME
-                <input type="text" id="name" placeholder="full name">
+                <input type="text" readonly id="name" placeholder="full name">
             </label>
             <label>
                 FROM:
-                <input type="text" id="writer" placeholder="e.g KZN">
+                <input type="text" id="fromLocation" placeholder="e.g KZN">
             </label>
             <label>
                 TO:
-                <input type="text" id="isbn" placeholder="e.g London">
+                <input type="text" id="toLocation" placeholder="e.g London">
             </label>
         </div>
         <div class="inline-button-elements">

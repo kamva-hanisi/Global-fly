@@ -1,6 +1,3 @@
-/*http://localhost:63342/js-crud/assets/css/app.css?_ijt=31rtlugvfv0ngaro4f31dren1o*/
-/*http://localhost:63342/js-crud/index.html?_ijt=uhfqlir65m14a62buf4dtv7o4o*/
-/*http://localhost:63342/js-crud/assets/css/app.css?_ijt=4igge18osjb0l7dtm0aorcfun3*/
 html:root {
     --blue-deep: #0777cc;
     --blue-deep-light: #34abe6;
@@ -195,6 +192,12 @@ form input[type=text] {
     font-size: 18px;
     margin-top: 10px;
     padding: 5px 10px;
+}
+
+form input:read-only{
+    background-color: #e9e9e9;
+    border: 1px solid #eee;
+    color: #7c7c7c;
 }
 
 form input[type=submit], form input[type=reset], button[id=edit], button[id=delete] {

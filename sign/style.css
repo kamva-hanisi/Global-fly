@@ -41,7 +41,7 @@ form input{
     border-radius: 6px;
     outline: none;
 }
-input[type="button"]{
+button[type="submit"]{
     width: 320px;
     height: 35px;
     margin-top: 20px;
@@ -49,6 +49,7 @@ input[type="button"]{
     background-color: #49c1a2;
     color: white;
     font-size: 18px;
+    cursor: pointer;
 }
 p{
     text-align: center;
